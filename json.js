@@ -31,3 +31,21 @@ json = JSON.stringify(rabbit, (key, value) => {
     return key === 'name' ? 'arthur' : value;
 });
 console.log(json);
+
+
+// 2. JSON to Object
+// parse(json)
+json = JSON.stringify(rabbit);
+const obj = JSON.parse(json, (key, value) => {
+    console.log(`key: ${key}, value: ${value}`);
+    return key === 'birthDate' ? new Date(value) : value;
+});
+console.log(obj);
+
+// JSON doesn't have a function when doing JSON.stringify(rabbit);
+// the codes below don't work
+rabbit.jump();
+// obj.jump();
+
+console.log(rabbit.birthDate.getDate());
+console.log(obj.birthDate.getDate()); // it gets an error unless line 41 is written.
