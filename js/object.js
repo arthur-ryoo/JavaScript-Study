@@ -66,3 +66,48 @@ function Person(name, age) {
     this.name = name;
     this.age = age;
 }
+
+// 5. in operator: property existence check (key in obj)
+console.log('name' in arthur);
+console.log('age' in arthur);
+console.log('random' in arthur); // return false
+console.log(arthur.random); // return undefined
+
+// 6. for..in vs for..of
+// for (key in obj)
+
+for (key in arthur) {
+    console.log(key);
+}
+
+// for (value of iterable)
+const array = [1, 2, 4, 5];
+for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+}
+
+for (value of array) {
+    console.log(value);
+}
+
+// 7. Fun cloning
+// Object.assign(dest, [obj1, obj2, obj3...])
+const user = { name: 'arthur', age: '20' };
+const user2 = user;
+
+// Old way
+const user3 = {};
+for (key in user) {
+    user3[key] = user[key];
+}
+console.log(user3);
+
+const user4 = Object.assign(user4, user);
+console.log(user4);
+
+// Another example
+const fruit1 = { color: 'red' }
+const fruit2 = { color: 'blue', size: 'big' };
+const mixed = Object.assign({}, fruit1, fruit2); // the last object will overwrite value if the first object has the same key
+console.log(mixed.color);
+console.log(mixed.size);
