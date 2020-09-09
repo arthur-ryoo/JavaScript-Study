@@ -68,3 +68,21 @@ const fruits2 = ['pear', 'coconut'];
 const newFruits = fruits.concat(fruits2);
 console.log(newFruits);
 
+// 5. Searching
+
+// indexOf: find the index // It returns an index number or -1 if an item is not in an array
+console.log(fruits);
+console.log(fruits.indexOf('apple'));
+console.log(fruits.indexOf('watermelon'));
+console.log(fruits.indexOf('coconut'));
+
+// includes // It returns true or false
+console.log(fruits.includes('watermelon'));
+console.log(fruits.includes('coconut'));
+
+// lastIndexOf
+fruits.push('apple');
+console.log(fruits);
+console.log(fruits.indexOf('apple')); // It finds the first applie in the array
+console.log(fruits.lastIndexOf('apple')); // It finds the last apple in the array
+
