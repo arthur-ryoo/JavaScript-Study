@@ -83,6 +83,6 @@ console.log(fruits.includes('coconut'));
 // lastIndexOf
 fruits.push('apple');
 console.log(fruits);
-console.log(fruits.indexOf('apple')); // It finds the first applie in the array
+console.log(fruits.indexOf('apple')); // It finds the first apple in the array
 console.log(fruits.lastIndexOf('apple')); // It finds the last apple in the array
 
