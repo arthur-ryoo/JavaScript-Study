@@ -42,15 +42,21 @@ const students = [
 
 // Q5. find a student with the score 90
 {
+    const result = students.find((student) => student.score === 90);
+    console.log(result);
 }
 
 // Q6. make an array of enrolled students
 {
+    const result = students.filter((student) => student.enrolled === true);
+    console.log(result);
 }
 
 // Q7. make an array containing only the students' scores
 // result should be: [45, 80, 90, 66, 88]
 {
+    const result = students.map((student) => student.score);
+    console.log(result);
 }
 
 // Q8. check if there is a student with the score lower than 50
