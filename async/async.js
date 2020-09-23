@@ -27,14 +27,33 @@ async function getBanana() {
 }
 
 async function pickFruits() {
-    try {
-        const apple = await getApple();
-        const banana = await getBanana();
-        return `${apple} + ${banana}`
-    } catch (error) {
-        console.log(error);
-    }
+    // try {
+    //     const apple = await getApple();
+    //     const banana = await getBanana();
+    //     return `${apple} + ${banana}`
+    // } catch (error) {
+    //     console.log(error);
+    // }
 
+    // Not the best example
+    const applePromise = getApple();
+    const bananaPromise = getBanana();
+    const apple = await applePromise;
+    const banana = await bananaPromise;
+    return `${apple} + ${banana}`;
 }
 
 pickFruits().then(console.log);
+
+// 3. useful Promise APIs
+function pickAllFruits() {
+    return Promise.all([getApple(), getBanana()])
+        .then(fruits => fruits.join(' + '));
+}
+pickAllFruits().then(console.log);
+
+function pickOnlyOne() {
+    return Promise.race([getApple(), getBanana()]);
+}
+
+pickOnlyOne().then(console.log);
