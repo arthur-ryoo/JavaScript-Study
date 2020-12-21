@@ -123,3 +123,25 @@
         printMessage();
     }
 }
+
+// Ternary operator
+
+{
+    const isCat = true;
+
+    // bad
+    {
+        let component;
+        if (isCat) {
+            component = 'cat';
+        } else {
+            component = 'dog';
+        }
+        console.log(component);
+    }
+
+    // good
+    const component = isCat ? 'cat' : 'dog';
+    console.log(component);
+    console.log(isCat ? 'cat' : 'dog');
+}
