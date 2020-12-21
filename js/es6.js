@@ -96,3 +96,30 @@
     const dog = { ...dog1, ...dog2 };
     console.log(dog);
 }
+
+// * Default parameters
+
+{
+    // bad
+    {
+        function printMessage(message) {
+            if (message == null) {
+                message = 'default message';
+            }
+            console.log(message);
+        }
+
+        printMessage('hello');
+        printMessage(); // default message
+    }
+
+    // good
+    {
+        function printMessage(message = 'default message') {
+            console.log(message);
+        }
+
+        printMessage('hello');
+        printMessage();
+    }
+}
