@@ -145,3 +145,18 @@
     console.log(component);
     console.log(isCat ? 'cat' : 'dog');
 }
+
+// * Template literals
+
+{
+    const weather = 'sunny';
+    const temparature = '16°C';
+
+    // bad
+    console.log(
+        'Today weather is ' + weather + ' and temparature is ' + temparature
+    );
+
+    // good
+    console.log(`Today's weather is ${weather} and temparature is ${temparature}`);
+}
